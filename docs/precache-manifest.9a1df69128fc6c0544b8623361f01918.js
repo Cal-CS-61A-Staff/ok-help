@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "ac88b12429e12bc6cd0fc33dcc9cffd1",
+    "revision": "5be98ae151f322e09dcdd20414256085",
     "url": "/ok-help/index.html"
   },
   {
@@ -8,15 +8,15 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/ok-help/static/css/2.266e55a5.chunk.css"
   },
   {
-    "revision": "91916f0f2ea610ca84f7",
-    "url": "/ok-help/static/css/main.b3f6774b.chunk.css"
+    "revision": "ac99b0c5aeea66b26eb9",
+    "url": "/ok-help/static/css/main.1e64f895.chunk.css"
   },
   {
     "revision": "30eb1828b233a06caaaf",
     "url": "/ok-help/static/js/2.d412c00f.chunk.js"
   },
   {
-    "revision": "91916f0f2ea610ca84f7",
+    "revision": "ac99b0c5aeea66b26eb9",
     "url": "/ok-help/static/js/main.3cdf0838.chunk.js"
   },
   {

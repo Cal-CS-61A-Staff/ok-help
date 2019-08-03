@@ -7,13 +7,7 @@
     user-select: all;
 }
 
-.GeneratedCommand:hover .fileNameSubmitBtn {
-    visibility: visible;
-}
-
 .fileNameSubmitBtn {
-    visibility: hidden;
-
     width: 100px;
     height: 42px;
     margin-left: 5px;
