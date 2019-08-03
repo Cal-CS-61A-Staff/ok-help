@@ -30,11 +30,13 @@ export default function GeneratedCommand(props) {
     }
 
     return (
-        <div>
-            <div className="GeneratedCommand">
+        <div className="GeneratedCommand">
+            <div className="Command">
                 <code>
                     {generated}
                 </code>
+            </div>
+            <div className="CopyButtonContainer">
                 <CopyToClipboard
                     text={generated}
                     onCopy={() => {
@@ -45,7 +47,7 @@ export default function GeneratedCommand(props) {
                         document.activeElement.blur();
                     }}
                 >
-                    <button className="btn btn-primary fileNameSubmitBtn" type="button">
+                    <button className="btn btn-primary CopyButton" type="button">
                         <span>{copyText}</span>
                     </button>
                 </CopyToClipboard>
