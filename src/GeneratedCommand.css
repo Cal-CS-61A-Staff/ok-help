@@ -4,4 +4,20 @@
     font-family: Inconsolata, monospace;
     font-size: 24pt;
     text-align: center;
+    user-select: all;
+}
+
+.fileNameSubmitBtn {
+    width: 100px;
+    height: 42px;
+    margin-left: 5px;
+    vertical-align: middle;
+    color: white;
+    font-size: 18px;
+    font-family: Calibri, sans-serif;
+    float: right;
+}
+
+.code {
+	display:inline-block;
 }

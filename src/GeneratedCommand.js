@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
+import { CopyToClipboard } from "react-copy-to-clipboard";
 
 import "./GeneratedCommand.css";
 
 export default function GeneratedCommand(props) {
+    const [copyText, setCopyText] = useState("Copy");
+
     let generated = "python3 ok";
     if (props.options) {
         for (const option of props.options.mandatoryArgs) {
@@ -25,11 +28,28 @@ export default function GeneratedCommand(props) {
             }
         }
     }
+
     return (
-        <div className="GeneratedCommand">
-            <code>
-                {generated}
-            </code>
+        <div>
+            <div className="GeneratedCommand">
+                <code>
+                    {generated}
+                </code>
+                <CopyToClipboard
+                    text={generated}
+                    onCopy={() => {
+                        setCopyText("Copied!");
+                        setTimeout(() => {
+                            setCopyText("Copy");
+                        }, 1000);
+                        document.activeElement.blur();
+                    }}
+                >
+                    <button className="btn btn-primary fileNameSubmitBtn" type="button">
+                        <span>{copyText}</span>
+                    </button>
+                </CopyToClipboard>
+            </div>
         </div>
     );
 }
