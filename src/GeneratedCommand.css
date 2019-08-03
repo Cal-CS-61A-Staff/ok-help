@@ -4,16 +4,20 @@
     font-family: Inconsolata, monospace;
     font-size: 24pt;
     text-align: center;
-    float: left;
-    width: -webkit-fill-available;
+    user-select: all;
+}
+
+.GeneratedCommand:hover .fileNameSubmitBtn {
+    visibility: visible;
 }
 
 .fileNameSubmitBtn {
-    width: 70px;
+    visibility: hidden;
+
+    width: 100px;
     height: 42px;
     margin-left: 5px;
     vertical-align: middle;
-    background-color: black;
     color: white;
     font-size: 18px;
     font-family: Calibri, sans-serif;
