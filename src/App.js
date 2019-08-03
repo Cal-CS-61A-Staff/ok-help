@@ -1,26 +1,45 @@
-import React from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import 'bootstrap/dist/js/bootstrap.min.js';
-import './App.css';
-import GeneratedCommand from './GeneratedCommand.js';
+import React, { useState } from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/js/bootstrap.min.js";
+import "./App.css";
+import GeneratedCommand from "./GeneratedCommand.js";
+import CommandOptions from "./CommandOptions.js";
+import OPTIONS from "./schema.js";
 
 function App() {
-  return (
-    <div className="App container">
-      <div className="row">
-        <div className="col">
-          <br/>
-          <h1 className="display-4">
-            <strong>okpy</strong>
-            {' '}
-            Command Generator
-          </h1>
-          <GeneratedCommand generatedCommand="python ok -q 03"/>
-          {/*<CommandOptions />*/}
+    const [activeIndex, setActiveIndex] = useState(null);
+
+    const [selectedOptions, setSelectedOptions] = useState(OPTIONS.map(() => ({})));
+
+    return (
+        <div className="App container">
+            <div className="row">
+                <div className="col">
+                    <br />
+                    <h1 className="display-4">
+                        <strong>okpy</strong>
+                        {" "}
+                        Command Generator
+                    </h1>
+                </div>
+            </div>
+            <div className="row">
+                <div className="col">
+                    <GeneratedCommand
+                        options={OPTIONS[activeIndex]}
+                        selectedArgs={selectedOptions[activeIndex]}
+                    />
+                </div>
+            </div>
+            <CommandOptions
+                options={OPTIONS}
+                activeIndex={activeIndex}
+                setActiveIndex={setActiveIndex}
+                selectedOptions={selectedOptions}
+                setSelectedOptions={setSelectedOptions}
+            />
         </div>
-      </div>
-    </div>
-  );
+    );
 }
 
 export default App;

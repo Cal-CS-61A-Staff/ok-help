@@ -2,4 +2,6 @@
     border: 2px black solid;
     padding: 10px;
     font-family: Inconsolata, monospace;
+    font-size: 24pt;
+    text-align: center;
 }
