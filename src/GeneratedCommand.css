@@ -27,4 +27,16 @@
     user-select: all;
     display: flex;
     background: white;
+    width: 100%;
+    /*box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);*/
  }
+
+.sticky {
+    top: -4px;
+    left: -2px;
+    right: -2px;
+    background: white;
+    position: fixed;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    z-index: 9999;
+}

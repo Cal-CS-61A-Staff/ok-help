@@ -23,14 +23,10 @@ function App() {
                     </h1>
                 </div>
             </div>
-            <div className="row sticky-top">
-                <div className="col">
-                    <GeneratedCommand
-                        options={OPTIONS[activeIndex]}
-                        selectedArgs={selectedOptions[activeIndex]}
-                    />
-                </div>
-            </div>
+            <GeneratedCommand
+                options={OPTIONS[activeIndex]}
+                selectedArgs={selectedOptions[activeIndex]}
+            />
             <CommandOptions
                 options={OPTIONS}
                 activeIndex={activeIndex}
