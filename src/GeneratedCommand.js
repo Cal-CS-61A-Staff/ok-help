@@ -1,9 +1,39 @@
-import React, { useState } from "react";
+import React from "react";
 import { CopyToClipboard } from "react-copy-to-clipboard";
-
 import { Textfit } from "react-textfit";
 
 import "./GeneratedCommand.css";
+
+const {useState} = React;
+
+const styles = {
+    command: {
+        flexGrow: 1,
+        fontSize: "24px",
+        width: "calc(100% - 110px)",
+        lineHeight: "42px",
+    },
+
+    copyButton: {
+        width: "100px",
+        height: "42px",
+        marginLeft: "5px",
+        verticalAlign: "middle",
+        color: "white",
+        fontSize: "18px",
+        fontFamily: "Calibri, sans-serif",
+        float: "right",
+    },
+
+    generatedCommand: {
+        border: "2px black solid",
+        padding: "8px",
+        fontFamily: "Inconsolata, monospace",
+        textAlign: "center",
+        userSelect: "all",
+        display: "flex",
+     },
+};
 
 export default function GeneratedCommand(props) {
     const [copyText, setCopyText] = useState("Copy");
@@ -32,15 +62,15 @@ export default function GeneratedCommand(props) {
     }
 
     return (
-        <div className="GeneratedCommand">
-            <div className="Command">
+        <div styles={styles.generatedCommand}>
+            <div styles={styles.command}>
                 <Textfit mode="single" forceSingleModeWidth={false} max={28}>
                     <code>
                         {generated}
                     </code>
                 </Textfit>
             </div>
-            <div className="CopyButtonContainer">
+            <div>
                 <CopyToClipboard
                     text={generated}
                     onCopy={() => {
@@ -51,7 +81,7 @@ export default function GeneratedCommand(props) {
                         document.activeElement.blur();
                     }}
                 >
-                    <button className="btn btn-primary CopyButton" type="button">
+                    <button className="btn btn-primary" styles={styles.copyButton} type="button">
                         <span>{copyText}</span>
                     </button>
                 </CopyToClipboard>
