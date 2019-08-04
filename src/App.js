@@ -1,10 +1,15 @@
 import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.min.js";
-import "./App.css";
 import GeneratedCommand from "./GeneratedCommand.js";
 import CommandOptions from "./CommandOptions.js";
 import OPTIONS from "./schema.js";
+
+const styles = {
+    textCenter: {
+        textAlign: "center",
+    },
+};
 
 function App() {
     const [activeIndex, setActiveIndex] = useState(null);
@@ -16,7 +21,7 @@ function App() {
             <div className="row">
                 <div className="col">
                     <br />
-                    <h1 className="display-4">
+                    <h1 className="display-4" style={styles.textCenter}>
                         <strong>okpy</strong>
                         {" "}
                         Command Generator
