@@ -1,6 +1,5 @@
 import React from "react";
 import Category from "./Category.js";
-import "./CommandOptions.css";
 
 export default function CommandOptions(props) {
     const {
