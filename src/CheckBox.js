@@ -1,12 +1,16 @@
 import React from "react";
 import useId from "./utils.js";
 
-import "./CheckBox.css";
+const styles = {
+    checkBox: {
+        paddingTop: "10px",
+    },
+};
 
 export default function CheckBox(props) {
     const id = useId();
     return (
-        <div className="CheckBox custom-control custom-checkbox">
+        <div className="custom-control custom-checkbox" style={styles.checkbox}>
             <input
                 type="checkbox"
                 className="custom-control-input"
