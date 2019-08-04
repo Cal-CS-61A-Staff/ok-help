@@ -1,6 +1,8 @@
 .Command {
     flex-grow: 1;
     font-size: 24px;
+    width: calc(100% - 110px);
+    line-height: 42px;
 }
 
 .CopyButton {
