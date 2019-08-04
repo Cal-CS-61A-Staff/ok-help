@@ -4,7 +4,47 @@ import $ from "jquery";
 
 import { Textfit } from "react-textfit";
 
-import "./GeneratedCommand.css";
+const styles = {
+    command: {
+        flexGrow: 1,
+        fontSize: "24px",
+        width: "calc(100% - 110px)",
+        lineHeight: "42px",
+    },
+
+    copyButton: {
+        width: "100px",
+        height: "42px",
+        marginLeft: "5px",
+        verticalAlign: "middle",
+        color: "white",
+        fontSize: "18px",
+        fontFamily: "Calibri, sans-serif",
+        float: "right",
+    },
+
+    generatedCommand: {
+        border: "2px black solid",
+        padding: "8px",
+        fontFamily: "Inconsolata, monospace",
+        textAlign: "center",
+        userDelect: "all",
+        display: "flex",
+        background: "white",
+        width: "100%",
+        /*box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3),*/
+    },
+
+    sticky: {
+        top: "-4px",
+        left: "-2px",
+        right: "-2px",
+        background: "white",
+        position: "fixed",
+        boxShadow: "0 5px 15px rgba(0, 0, 0, 0.3)",
+        zIndex: 9999,
+    },
+};
 
 export default function GeneratedCommand(props) {
     const [copyText, setCopyText] = useState("Copy");
@@ -40,9 +80,9 @@ export default function GeneratedCommand(props) {
         const { top } = $(sensor.current).offset();
         if (windowTop > top) {
             $(sensor.current).height($(ref.current).outerHeight());
-            $(ref.current).addClass("sticky");
+            $(ref.current).css(styles.sticky);
         } else {
-            $(ref.current).removeClass("sticky");
+            $(ref.current).removeAttr("style");
             $(sensor.current).height(0);
         }
     }
@@ -54,8 +94,8 @@ export default function GeneratedCommand(props) {
             <div ref={sensor} />
             <div className="row" ref={ref}>
                 <div className="col">
-                    <div className="GeneratedCommand">
-                        <div className="Command">
+                    <div style={styles.generatedCommand}>
+                        <div style={styles.command}>
                             <Textfit mode="single" forceSingleModeWidth={false} max={28}>
                                 <code>
                                     {generated}
@@ -73,7 +113,7 @@ export default function GeneratedCommand(props) {
                                     document.activeElement.blur();
                                 }}
                             >
-                                <button className="btn btn-primary CopyButton" type="button">
+                                <button className="btn btn-primary" style={styles.copyButton} type="button">
                                     <span>{copyText}</span>
                                 </button>
                             </CopyToClipboard>
