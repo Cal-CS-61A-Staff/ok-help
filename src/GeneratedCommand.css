@@ -1,14 +1,11 @@
-.GeneratedCommand {
-    border: 2px black solid;
-    padding: 10px;
-    font-family: Inconsolata, monospace;
-    font-size: 24pt;
-    text-align: center;
-    user-select: all;
-    background: white;
+.Command {
+    flex-grow: 1;
+    font-size: 24px;
+    width: calc(100% - 110px);
+    line-height: 42px;
 }
 
-.fileNameSubmitBtn {
+.CopyButton {
     width: 100px;
     height: 42px;
     margin-left: 5px;
@@ -19,6 +16,15 @@
     float: right;
 }
 
-.code {
-	display:inline-block;
+.copyButtonContainer {
 }
+
+.GeneratedCommand {
+    border: 2px black solid;
+    padding: 8px;
+    font-family: Inconsolata, monospace;
+    text-align: center;
+    user-select: all;
+    display: flex;
+    background: white;
+ }
