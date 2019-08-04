@@ -35,7 +35,7 @@ export default function GeneratedCommand(props) {
     return (
         <div className="GeneratedCommand">
             <div className="Command">
-                <Textfit mode="single" forceSingleModeWidth={false}>
+                <Textfit mode="single" forceSingleModeWidth={false} max={28}>
                     <code>
                         {generated}
                     </code>
