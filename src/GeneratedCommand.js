@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 
+import { Textfit } from "react-textfit";
+
 import "./GeneratedCommand.css";
 
 export default function GeneratedCommand(props) {
@@ -30,11 +32,15 @@ export default function GeneratedCommand(props) {
     }
 
     return (
-        <div>
-            <div className="GeneratedCommand">
-                <code>
-                    {generated}
-                </code>
+        <div className="GeneratedCommand">
+            <div className="Command">
+                <Textfit mode="single" forceSingleModeWidth={false} max={28}>
+                    <code>
+                        {generated}
+                    </code>
+                </Textfit>
+            </div>
+            <div className="CopyButtonContainer">
                 <CopyToClipboard
                     text={generated}
                     onCopy={() => {
@@ -45,7 +51,7 @@ export default function GeneratedCommand(props) {
                         document.activeElement.blur();
                     }}
                 >
-                    <button className="btn btn-primary fileNameSubmitBtn" type="button">
+                    <button className="btn btn-primary CopyButton" type="button">
                         <span>{copyText}</span>
                     </button>
                 </CopyToClipboard>
