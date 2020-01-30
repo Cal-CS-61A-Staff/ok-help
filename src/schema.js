@@ -70,6 +70,9 @@ const NO_BROWSER_FLAG = new Flag(null, "no-browser", "No Browser",
 const UPDATE_FLAG = new Flag(null, "update", "Update",
     "Update okpy, if an update is available, and then exit.");
 
+const SCORE_FLAG = new Flag(null, "score", "Score",
+    "Score all questions based on number of tests passed for each.")
+
 export default [
     new Category(
         "Unlock",
@@ -90,6 +93,7 @@ export default [
             QUESTION_VALUE,
             INTERACTIVE_FLAG,
             VERBOSE_FLAG,
+            SCORE_FLAG,
             ALL_FLAG,
             LOCAL_FLAG,
             NO_BROWSER_FLAG,
